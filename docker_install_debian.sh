@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo apt-get install git-all -y
 sudo apt-get install \
      apt-transport-https \
@@ -13,5 +14,8 @@ sudo add-apt-repository \
 	      stable"
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
-
-
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+sudo docker pull jupyter/datascience-notebook
+sudo docker images jupyter/datascience-notebook
+sudo docker run -d --name notebook -v /home/data:/home/jovyan/ -p 8888:8888 jupyter/datascience-notebook
+sudo docker exec -it notebook jupyter notebook list
