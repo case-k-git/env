@@ -2,9 +2,11 @@ version: "3"
 services:
   jupyter:
     build: .
+    container_name: notebook
     volumes:
       - ./:/tmp/working
     working_dir: /tmp/working
     ports:
       - 8888:8888
     command: jupyter notebook --ip=0.0.0.0 --allow-root --no-browser
+    # sudo docker exec -it jupyter  jupyter notebook list
