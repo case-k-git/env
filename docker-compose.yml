@@ -9,4 +9,4 @@ services:
     ports:
       - 8888:8888
     command: jupyter notebook --ip=0.0.0.0 --allow-root --no-browser
-    # sudo docker exec -it jupyter  jupyter notebook list
+    # sudo docker exec -it notebook  jupyter notebook list
