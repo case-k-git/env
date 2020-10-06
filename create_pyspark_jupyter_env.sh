@@ -1,5 +1,5 @@
 #!/bin/bash
-# Set tokyo region 
+# Set tokyo region
 $ gcloud config set dataproc/region asia-northeast1
 Updated property [dataproc/region].
 
@@ -13,4 +13,4 @@ $ gcloud beta dataproc clusters create cluster-name2 \
     --master-machine-type n1-highmem-4 --master-boot-disk-size 300 \
     --num-workers 2 --worker-machine-type n1-highmem-4　\
     --num-preemptible-workers 2 --worker-machine-type n1-highmem-8 \
-    --worker-boot-disk-size 300 --network=default 
+    --worker-boot-disk-size 300 --network=default

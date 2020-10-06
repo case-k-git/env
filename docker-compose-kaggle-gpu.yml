@@ -1,0 +1,16 @@
+version: "2.4"
+services:
+  jupyter:
+    image: kaggle/python-gpu-build:latest # tensorflow/tensorflow:latest-gpu
+    container_name: notebook
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
+    volumes:
+      - ./:/home
+    working_dir: /home
+    ports:
+      - 8888:8080
+    command: jupyter notebook --ip=0.0.0.0 --allow-root --no-browser
+    # sudo docker exec -it notebook  jupyter notebook list
