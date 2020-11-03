@@ -1,9 +1,9 @@
 #!/bin/bash
 
-bash insttalll-cuda.sh
-bash install_dokcer_ubuntu.sh
-bash bash docker_compose_install.sh
-bash nvidia-container-runtime-script
+bash ./script/insttalll-cuda.sh
+bash ./script/install_dokcer_ubuntu.sh
+bash ./script/docker_compose_install.sh
+bash ./script/nvidia-container-runtime-script.sh
 sudo apt-get install nvidia-container-runtime
 sudo tee /etc/docker/daemon.json <<EOF
 {
@@ -16,5 +16,5 @@ sudo tee /etc/docker/daemon.json <<EOF
 }
 EOF
 sudo pkill -SIGHUP dockerd
-bash build-kaggle-gpu-image.sh
+bash ./script/build-kaggle-gpu-image.sh
 sudo docker-compose -f docker-compose-kaggle-gpu.yml up -d --build
